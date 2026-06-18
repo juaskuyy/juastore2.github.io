@@ -39,7 +39,35 @@ body{
     margin-top:10px;
     color:#ddd;
 }
+/* LOGO JUASTORE */
+.logo{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 4px solid #00ffff;
+    box-shadow:
+        0 0 20px #00ffff,
+        0 0 40px #ff00ff,
+        0 0 60px #00ffff;
+    animation: logoGlow 1.5s infinite alternate;
+}
 
+
+@keyframes logoGlow{
+    0%{
+        box-shadow:
+        0 0 20px #00ffff,
+        0 0 40px #00ffff;
+    }
+
+    100%{
+        box-shadow:
+        0 0 20px #ff00ff,
+        0 0 40px #ff00ff;
+    }
+}
 
 @keyframes rgb{
     0%{
