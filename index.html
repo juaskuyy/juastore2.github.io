@@ -1,430 +1,384 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>JuaStore Top Up Game</title>
-
-<style>
-
-/* RESET */
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
-}
-
-body{
-    background:
-    radial-gradient(circle, #111133, #02020d);
-    color:white;
-    padding:20px;
-}
-
-
-/* LOGO */
-.logo{
-    width:150px;
-    height:150px;
-    object-fit:cover;
-    border-radius:50%;
-    border:4px solid #00ffff;
-    display:block;
-    margin:20px auto;
-    box-shadow:
-    0 0 20px #00ffff,
-    0 0 50px #ff00ff;
-    animation:logo 1.5s infinite alternate;
-}
-
-
-@keyframes logo{
-    from{
-        box-shadow:
-        0 0 20px #00ffff,
-        0 0 50px #00ffff;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#070b18" />
+  <meta name="description" content="JuaStore Mobile Legends - Top up Diamond MLBB murah, cepat, aman, dan terpercaya." />
+  <title>JuaStore Diamond Mobile Legends</title>
+  <style>
+    :root{
+      --bg:#070b18;--panel:#0e1530;--panel2:#121b3c;--line:rgba(255,255,255,.10);
+      --text:#f7f9ff;--muted:#aab3cd;--blue:#4cc9ff;--purple:#8b5cff;
+      --green:#2fe57c;--gold:#ffd166;--shadow:0 22px 60px rgba(0,0,0,.35)
     }
-
-    to{
-        box-shadow:
-        0 0 20px #ff00ff,
-        0 0 50px #ff00ff;
+    *{box-sizing:border-box}html{scroll-behavior:smooth}
+    body{
+      margin:0;color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:
+        radial-gradient(circle at 10% 10%,rgba(76,201,255,.12),transparent 28%),
+        radial-gradient(circle at 90% 14%,rgba(139,92,255,.15),transparent 28%),
+        linear-gradient(180deg,#080d1e 0%,#050814 100%);min-height:100vh
     }
-}
-
-
-/* WELCOME */
-.welcome{
-    text-align:center;
-}
-
-
-.welcome h1{
-    font-size:38px;
-    text-transform:uppercase;
-    animation:rgb 1s infinite alternate;
-}
-
-
-.welcome p{
-    font-size:18px;
-    color:#ddd;
-    margin-top:10px;
-    margin-bottom:30px;
-}
-
-
-@keyframes rgb{
-
-0%{
-color:#00ffff;
-text-shadow:0 0 15px #00ffff;
-}
-
-50%{
-color:#ff00ff;
-text-shadow:0 0 15px #ff00ff;
-}
-
-100%{
-color:#00ff66;
-text-shadow:0 0 15px #00ff66;
-}
-
-}
-
-
-/* CARD GAME */
-
-.card{
-
-max-width:700px;
-width:100%;
-
-margin:25px auto;
-
-background:#111;
-
-padding:25px;
-
-border-radius:25px;
-
-border:2px solid #00ffff;
-
-box-shadow:
-0 0 20px #00ffff;
-
-}
-
-
-.card h2{
-
-text-align:center;
-
-font-size:28px;
-
-margin-bottom:20px;
-
-animation:rgb 1s infinite alternate;
-
-}
-
-
-.price{
-
-font-size:20px;
-
-line-height:2;
-
-}
-
-
-.subtitle{
-
-color:#ffcc00;
-
-font-size:22px;
-
-margin:25px 0 10px;
-
-text-shadow:
-0 0 15px #ffcc00;
-
-}
-
-
-/* CONTACT */
-
-.contact{
-
-max-width:700px;
-
-margin:35px auto;
-
-background:#111;
-
-padding:25px;
-
-border-radius:25px;
-
-border:2px solid #ff00ff;
-
-box-shadow:
-0 0 25px #ff00ff;
-
-}
-
-
-.contact h2{
-
-text-align:center;
-
-margin-bottom:20px;
-
-animation:rgb 1s infinite alternate;
-
-}
-
-
-.contact a{
-
-display:block;
-
-color:#00ffff;
-
-text-decoration:none;
-
-font-size:17px;
-
-margin:12px 0;
-
-word-break:break-word;
-
-}
-
-
-.contact a:hover{
-
-color:#ff00ff;
-
-}
-
-
-/* FOOTER */
-
-.footer{
-
-text-align:center;
-
-margin-top:30px;
-
-color:#aaa;
-
-font-size:14px;
-
-}
-
-
-/* MOBILE */
-
-@media(max-width:600px){
-
-.logo{
-width:120px;
-height:120px;
-}
-
-.welcome h1{
-font-size:25px;
-}
-
-.welcome p{
-font-size:15px;
-}
-
-.card{
-padding:20px;
-}
-
-.card h2{
-font-size:22px;
-}
-
-.price{
-font-size:17px;
-line-height:1.8;
-}
-
-}
-
-
-</style>
-
+    body::before{
+      content:"";position:fixed;inset:0;pointer-events:none;opacity:.14;
+      background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);
+      background-size:34px 34px;mask-image:linear-gradient(to bottom,black,transparent 85%)
+    }
+    a{text-decoration:none;color:inherit}button{font:inherit}
+    .wrap{width:min(1120px,calc(100% - 28px));margin:auto}
+    .nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(16px);background:rgba(5,8,20,.72);border-bottom:1px solid var(--line)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:46px;height:46px;border-radius:15px;display:grid;place-items:center;font-weight:900;font-size:18px;color:#07101a;background:linear-gradient(135deg,#fff,#a7dfff 55%,#8b5cff);box-shadow:0 10px 30px rgba(76,201,255,.24)}
+    .brand strong{display:block;font-size:18px}.brand span{font-size:12px;color:var(--muted)}
+    .nav-links{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+    .nav-link{padding:10px 14px;border:1px solid var(--line);border-radius:12px;color:var(--muted);background:rgba(255,255,255,.025)}
+    .nav-link:hover{color:#fff;border-color:rgba(76,201,255,.45)}
+    .hero{padding:70px 0 36px}.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:30px;align-items:center}
+    .eyebrow{display:inline-flex;gap:8px;align-items:center;padding:8px 12px;border-radius:999px;border:1px solid rgba(76,201,255,.35);color:#ccefff;background:rgba(76,201,255,.08);font-size:13px;font-weight:700}
+    h1{font-size:clamp(42px,8vw,76px);line-height:.97;margin:18px 0 16px;letter-spacing:-.05em}
+    .gradient{background:linear-gradient(90deg,#fff 5%,#7fdcff 48%,#a98cff);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .lead{font-size:18px;line-height:1.7;color:var(--muted);max-width:650px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+    .btn{border:none;border-radius:15px;padding:14px 18px;font-weight:800;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:9px;transition:.2s ease}
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{background:linear-gradient(135deg,var(--blue),#3f7cff);color:#06111e;box-shadow:0 15px 35px rgba(76,201,255,.22)}
+    .btn-secondary{background:rgba(255,255,255,.06);border:1px solid var(--line);color:#fff}
+    .btn-pay{background:linear-gradient(135deg,var(--purple),#6139ff);color:#fff}
+    .hero-card{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:28px;padding:24px;background:linear-gradient(145deg,rgba(18,27,60,.96),rgba(10,15,35,.95));box-shadow:var(--shadow)}
+    .hero-card::before{content:"";position:absolute;width:230px;height:230px;border-radius:50%;right:-80px;top:-80px;background:radial-gradient(circle,rgba(76,201,255,.38),transparent 68%)}
+    .game-screen{min-height:320px;border-radius:22px;border:1px solid rgba(255,255,255,.10);padding:24px;background:linear-gradient(145deg,rgba(139,92,255,.22),rgba(76,201,255,.08)),#0b1230;position:relative;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
+    .game-screen::after{content:"◆";position:absolute;right:20px;bottom:-45px;font-size:180px;font-weight:1000;color:rgba(255,255,255,.055);transform:rotate(20deg)}
+    .status{display:flex;align-items:center;justify-content:space-between;gap:10px;position:relative;z-index:2}
+    .online{display:inline-flex;gap:8px;align-items:center;font-size:13px;color:#c9ffd9}
+    .dot{width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 18px var(--green)}
+    .big-diamond{position:relative;z-index:2}.big-diamond small{color:var(--muted);text-transform:uppercase;letter-spacing:.14em}
+    .big-diamond strong{display:block;font-size:56px;margin-top:4px}.badges{display:flex;gap:8px;flex-wrap:wrap;position:relative;z-index:2}
+    .badge{font-size:12px;padding:8px 10px;border-radius:10px;background:rgba(255,255,255,.08);border:1px solid var(--line)}
+    section{padding:42px 0}.section-head{text-align:center;margin-bottom:26px}
+    .section-head h2{font-size:clamp(30px,5vw,48px);margin:0 0 8px}.section-head p{color:var(--muted);margin:0}
+    .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .price-card{border-radius:20px;border:1px solid var(--line);padding:19px;background:linear-gradient(145deg,rgba(18,27,60,.88),rgba(9,14,31,.92));transition:.2s ease;position:relative;overflow:hidden}
+    .price-card:hover{transform:translateY(-4px);border-color:rgba(76,201,255,.45);box-shadow:0 20px 40px rgba(0,0,0,.26)}
+    .price-card .type{font-size:12px;color:var(--blue);font-weight:900;text-transform:uppercase;letter-spacing:.12em}
+    .price-card h3{font-size:25px;margin:10px 0 4px}.price-card .price{font-size:21px;font-weight:900;color:#fff}
+    .price-card .desc{font-size:13px;color:var(--muted);margin:10px 0 16px}
+    .mini-btn{width:100%;padding:11px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.06);color:#fff;font-weight:800;cursor:pointer}
+    .mini-btn:hover{background:rgba(76,201,255,.12)}
+    .feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .feature{padding:22px;border-radius:20px;background:rgba(255,255,255,.035);border:1px solid var(--line)}
+    .feature-icon{font-size:28px}.feature h3{margin:12px 0 7px}.feature p{color:var(--muted);line-height:1.6;margin:0}
+    .order-box{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:26px;border:1px solid var(--line);border-radius:26px;background:linear-gradient(145deg,rgba(18,27,60,.95),rgba(9,14,31,.95));box-shadow:var(--shadow)}
+    .steps{display:grid;gap:12px}.step{display:flex;gap:12px;align-items:flex-start;padding:14px;border-radius:15px;background:rgba(255,255,255,.035);border:1px solid var(--line)}
+    .step-num{flex:0 0 34px;height:34px;border-radius:11px;display:grid;place-items:center;font-weight:900;background:rgba(76,201,255,.13);color:var(--blue)}
+    .step b{display:block;margin-bottom:3px}.step span{font-size:13px;color:var(--muted)}
+    .action-panel{display:flex;flex-direction:column;justify-content:center;gap:12px}.action-panel .btn{width:100%}
+    .notice{font-size:13px;color:var(--muted);line-height:1.55}
+    .faq{display:grid;gap:10px;max-width:850px;margin:auto}
+    details{border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.035);padding:16px 18px}
+    summary{cursor:pointer;font-weight:800}details p{color:var(--muted);line-height:1.6;margin:12px 0 0}
+    footer{padding:34px 0 46px;text-align:center;color:var(--muted);border-top:1px solid var(--line)}
+    .toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,24px);opacity:0;pointer-events:none;background:#10192f;border:1px solid rgba(76,201,255,.35);padding:13px 18px;border-radius:14px;box-shadow:var(--shadow);transition:.25s ease;z-index:100;font-weight:800}
+    .toast.show{opacity:1;transform:translate(-50%,0)}
+    @media(max-width:860px){.hero-grid,.order-box{grid-template-columns:1fr}.price-grid,.feature-grid{grid-template-columns:repeat(2,1fr)}.nav-links .nav-link:nth-child(-n+2){display:none}}
+    @media(max-width:560px){.hero{padding-top:45px}.price-grid,.feature-grid{grid-template-columns:1fr}.hero-actions{display:grid}.hero-actions .btn{width:100%}.nav-link{padding:9px 11px;font-size:13px}.game-screen{min-height:270px}.big-diamond strong{font-size:45px}}
+  </style>
 </head>
-
-
 <body>
+  <nav class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#home">
+        <div class="logo">JS</div>
+        <div><strong>JuaStore</strong><span>DIAMOND MOBILE LEGENDS</span></div>
+      </a>
+      <div class="nav-links">
+        <a class="nav-link" href="#pricelist">Pricelist</a>
+        <a class="nav-link" href="#cara-order">Cara Order</a>
+        <a class="nav-link" href="https://juastorepayment.biz.id/" target="_blank" rel="noopener">Payment</a>
+      </div>
+    </div>
+  </nav>
 
+  <main id="home">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">🎮 TOP UP DIAMOND MLBB TERPERCAYA</div>
+          <h1><span class="gradient">Push Rank Makin Seru</span><br>Diamond Tanpa Ribet.</h1>
+          <p class="lead">Top up Diamond Mobile Legends murah dan praktis. Cukup masukkan User ID dan Zone ID, pilih nominal, lalu kirim ke Admin 1.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#pricelist">💎 Lihat Pricelist</a>
+            <button class="btn btn-secondary" id="copyTop">📋 Salin Format Order</button>
+            <a class="btn btn-pay" href="https://juastorepayment.biz.id/" target="_blank" rel="noopener">💳 Buka Payment</a>
+          </div>
+        </div>
 
-<!-- LOGO -->
-<img src="logo.png" class="logo">
+        <div class="hero-card">
+          <div class="game-screen">
+            <div class="status">
+              <span class="online"><span class="dot"></span> Store Online</span>
+              <span class="badge">Fast Process</span>
+            </div>
+            <div class="big-diamond">
+              <small>Mulai dari</small>
+              <strong>20 💎</strong>
+              <span>Harga mulai Rp6.000</span>
+            </div>
+            <div class="badges">
+              <span class="badge">⚡ Proses Cepat</span>
+              <span class="badge">🛡️ Aman</span>
+              <span class="badge">💬 Admin Responsif</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <section id="pricelist">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Pricelist Diamond MLBB</h2>
+          <p>Pilih jumlah Diamond Mobile Legends yang kamu butuhkan.</p>
+        </div>
+        <div class="price-grid">
+          <div class="price-card">
+      <div class="type">Diamond MLBB</div>
+      <h3>20 Diamond</h3>
+      <div class="price">Rp6.000</div>
+      <p class="desc">Top up langsung ke akun Mobile Legends.</p>
+      <button class="mini-btn order-item" data-item="20 Diamond - Rp6.000">Pilih Paket</button>
+    </div>
+<div class="price-card">
+      <div class="type">Diamond MLBB</div>
+      <h3>59 Diamond</h3>
+      <div class="price">Rp15.500</div>
+      <p class="desc">Top up langsung ke akun Mobile Legends.</p>
+      <button class="mini-btn order-item" data-item="59 Diamond - Rp15.500">Pilih Paket</button>
+    </div>
+<div class="price-card">
+      <div class="type">Diamond MLBB</div>
+      <h3>100 Diamond</h3>
+      <div class="price">Rp26.500</div>
+      <p class="desc">Top up langsung ke akun Mobile Legends.</p>
+      <button class="mini-btn order-item" data-item="100 Diamond - Rp26.500">Pilih Paket</button>
+    </div>
+<div class="price-card">
+      <div class="type">Diamond MLBB</div>
+      <h3>200 Diamond</h3>
+      <div class="price">Rp57.000</div>
+      <p class="desc">Top up langsung ke akun Mobile Legends.</p>
+      <button class="mini-btn order-item" data-item="200 Diamond - Rp57.000">Pilih Paket</button>
+    </div>
+<div class="price-card">
+      <div class="type">Diamond MLBB</div>
+      <h3>250 Diamond</h3>
+      <div class="price">Rp69.000</div>
+      <p class="desc">Top up langsung ke akun Mobile Legends.</p>
+      <button class="mini-btn order-item" data-item="250 Diamond - Rp69.000">Pilih Paket</button>
+    </div>
+<div class="price-card">
+      <div class="type">Diamond MLBB</div>
+      <h3>334 Diamond</h3>
+      <div class="price">Rp98.000</div>
+      <p class="desc">Top up langsung ke akun Mobile Legends.</p>
+      <button class="mini-btn order-item" data-item="334 Diamond - Rp98.000">Pilih Paket</button>
+    </div>
+<div class="price-card">
+      <div class="type">Diamond MLBB</div>
+      <h3>429 Diamond</h3>
+      <div class="price">Rp119.000</div>
+      <p class="desc">Top up langsung ke akun Mobile Legends.</p>
+      <button class="mini-btn order-item" data-item="429 Diamond - Rp119.000">Pilih Paket</button>
+    </div>
+<div class="price-card">
+      <div class="type">Diamond MLBB</div>
+      <h3>568 Diamond</h3>
+      <div class="price">Rp149.000</div>
+      <p class="desc">Top up langsung ke akun Mobile Legends.</p>
+      <button class="mini-btn order-item" data-item="568 Diamond - Rp149.000">Pilih Paket</button>
+    </div>
+<div class="price-card">
+      <div class="type">Diamond MLBB</div>
+      <h3>706 Diamond</h3>
+      <div class="price">Rp189.000</div>
+      <p class="desc">Top up langsung ke akun Mobile Legends.</p>
+      <button class="mini-btn order-item" data-item="706 Diamond - Rp189.000">Pilih Paket</button>
+    </div>
+<div class="price-card">
+      <div class="type">Diamond MLBB</div>
+      <h3>1050 Diamond</h3>
+      <div class="price">Rp279.000</div>
+      <p class="desc">Top up langsung ke akun Mobile Legends.</p>
+      <button class="mini-btn order-item" data-item="1050 Diamond - Rp279.000">Pilih Paket</button>
+    </div>
+<div class="price-card">
+      <div class="type">Diamond MLBB</div>
+      <h3>1138 Diamond</h3>
+      <div class="price">Rp310.000</div>
+      <p class="desc">Top up langsung ke akun Mobile Legends.</p>
+      <button class="mini-btn order-item" data-item="1138 Diamond - Rp310.000">Pilih Paket</button>
+    </div>
+<div class="price-card">
+      <div class="type">Diamond MLBB</div>
+      <h3>1704 Diamond</h3>
+      <div class="price">Rp464.100</div>
+      <p class="desc">Top up langsung ke akun Mobile Legends.</p>
+      <button class="mini-btn order-item" data-item="1704 Diamond - Rp464.100">Pilih Paket</button>
+    </div>
+<div class="price-card">
+      <div class="type">Diamond MLBB</div>
+      <h3>2010 Diamond</h3>
+      <div class="price">Rp519.000</div>
+      <p class="desc">Top up langsung ke akun Mobile Legends.</p>
+      <button class="mini-btn order-item" data-item="2010 Diamond - Rp519.000">Pilih Paket</button>
+    </div>
+<div class="price-card">
+      <div class="type">Diamond MLBB</div>
+      <h3>2195 Diamond</h3>
+      <div class="price">Rp567.000</div>
+      <p class="desc">Top up langsung ke akun Mobile Legends.</p>
+      <button class="mini-btn order-item" data-item="2195 Diamond - Rp567.000">Pilih Paket</button>
+    </div>
+<div class="price-card">
+      <div class="type">Diamond MLBB</div>
+      <h3>3688 Diamond</h3>
+      <div class="price">Rp949.000</div>
+      <p class="desc">Top up langsung ke akun Mobile Legends.</p>
+      <button class="mini-btn order-item" data-item="3688 Diamond - Rp949.000">Pilih Paket</button>
+    </div>
+<div class="price-card">
+      <div class="type">Diamond MLBB</div>
+      <h3>4020 Diamond</h3>
+      <div class="price">Rp999.000</div>
+      <p class="desc">Top up langsung ke akun Mobile Legends.</p>
+      <button class="mini-btn order-item" data-item="4020 Diamond - Rp999.000">Pilih Paket</button>
+    </div>
+<div class="price-card">
+      <div class="type">Diamond MLBB</div>
+      <h3>4830 Diamond</h3>
+      <div class="price">Rp1.179.000</div>
+      <p class="desc">Top up langsung ke akun Mobile Legends.</p>
+      <button class="mini-btn order-item" data-item="4830 Diamond - Rp1.179.000">Pilih Paket</button>
+    </div>
+<div class="price-card">
+      <div class="type">Diamond MLBB</div>
+      <h3>5532 Diamond</h3>
+      <div class="price">Rp1.350.000</div>
+      <p class="desc">Top up langsung ke akun Mobile Legends.</p>
+      <button class="mini-btn order-item" data-item="5532 Diamond - Rp1.350.000">Pilih Paket</button>
+    </div>
+<div class="price-card">
+      <div class="type">Diamond MLBB</div>
+      <h3>6000 Diamond</h3>
+      <div class="price">Rp1.464.000</div>
+      <p class="desc">Top up langsung ke akun Mobile Legends.</p>
+      <button class="mini-btn order-item" data-item="6000 Diamond - Rp1.464.000">Pilih Paket</button>
+    </div>
+        </div>
+      </div>
+    </section>
 
-<!-- WELCOME -->
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Kenapa JuaStore?</h2>
+          <p>Top up dibuat cepat, praktis, dan mudah dipahami.</p>
+        </div>
+        <div class="feature-grid">
+          <div class="feature"><div class="feature-icon">⚡</div><h3>Fast Process</h3><p>Pesanan segera diproses setelah data akun dan pembayaran dikonfirmasi.</p></div>
+          <div class="feature"><div class="feature-icon">🛡️</div><h3>Aman & Trusted</h3><p>Cukup kirim User ID dan Zone ID. Tidak membutuhkan password akun.</p></div>
+          <div class="feature"><div class="feature-icon">💬</div><h3>Mudah Dihubungi</h3><p>Tombol order langsung mengarahkan kamu ke WhatsApp Admin 1.</p></div>
+        </div>
+      </div>
+    </section>
 
-<div class="welcome">
+    <section id="cara-order">
+      <div class="wrap">
+        <div class="order-box">
+          <div>
+            <h2 style="margin-top:0">Cara Order</h2>
+            <div class="steps">
+              <div class="step"><div class="step-num">1</div><div><b>Pilih nominal</b><span>Pilih jumlah Diamond dari daftar pricelist.</span></div></div>
+              <div class="step"><div class="step-num">2</div><div><b>Salin format order</b><span>Isi User ID, Zone ID, dan jumlah Diamond dengan benar.</span></div></div>
+              <div class="step"><div class="step-num">3</div><div><b>Lakukan pembayaran</b><span>Buka website Payment JuaStore dan bayar sesuai total.</span></div></div>
+              <div class="step"><div class="step-num">4</div><div><b>Kirim ke Admin 1</b><span>Kirim format dan bukti pembayaran melalui chat pribadi.</span></div></div>
+            </div>
+          </div>
+          <div class="action-panel">
+            <button class="btn btn-secondary" id="copyBottom">📋 Salin Format Order MLBB</button>
+            <a class="btn btn-pay" href="https://juastorepayment.biz.id/" target="_blank" rel="noopener">💳 Payment JuaStore</a>
+            <a class="btn btn-primary" href="https://wa.me/6285111662004?text=Halo%20Admin%201%2C%20saya%20mau%20top%20up%20Diamond%20Mobile%20Legends." target="_blank" rel="noopener">💬 Chat Admin 1</a>
+            <p class="notice">Periksa kembali User ID dan Zone ID sebelum dikirim. Kesalahan data dapat menyebabkan Diamond masuk ke akun yang salah.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<h1>
-🎮 Welcome To JuaStore 🎮
-</h1>
+    <section>
+      <div class="wrap">
+        <div class="section-head"><h2>FAQ</h2><p>Pertanyaan yang sering ditanyakan.</p></div>
+        <div class="faq">
+          <details><summary>Apakah harus memberikan password?</summary><p>Tidak. Top up Diamond MLBB hanya membutuhkan User ID dan Zone ID.</p></details>
+          <details><summary>Di mana melihat Zone ID?</summary><p>Buka profil Mobile Legends. User ID dan Zone ID tampil dalam format angka, dengan Zone ID berada di dalam tanda kurung.</p></details>
+          <details><summary>Bagaimana cara membayar?</summary><p>Tekan tombol Payment JuaStore untuk membuka halaman pembayaran resmi.</p></details>
+          <details><summary>Ke mana format order dikirim?</summary><p>Format yang sudah diisi lengkap dikirim melalui chat pribadi ke Admin 1.</p></details>
+        </div>
+      </div>
+    </section>
+  </main>
 
-<p>
-Top Up Game Murah Hanya di JuaStore 🔥
-</p>
+  <footer><div class="wrap">© 2026 JuaStore — Diamond Mobile Legends. All rights reserved.</div></footer>
+  <div class="toast" id="toast">✅ Format berhasil disalin</div>
 
-</div>
+  <script>
+    const orderFormat = `╭━━━〔 💎 *FORMAT ORDER DIAMOND MLBB* 💎 〕━━━╮
 
+𐙚 *_User ID Mobile Legends_* »
+𐙚 *_Zone ID_* »
+𐙚 *_Jumlah Diamond_* »
 
+┏━━━━━━━━━━━━━━━┓
 
-<!-- ROBUX -->
+⚠️ *HARAP DI BACA*
 
-<div class="card">
+• Pastikan User ID dan Zone ID sudah benar
+• Isi format dengan jelas agar proses lebih cepat
+• Pastikan pembayaran sesuai pricelist
+• Kesalahan User ID atau Zone ID bukan tanggung jawab seller
 
-<h2>
-🔥 ROBUX VILOG 🔥
-</h2>
+┗━━━━━━━━━━━━━━━┛
 
+*#Setelah mengisi format order, kirim format dan bukti pembayaran ke Admin 1*
 
-<div class="price">
+╰━➤ *_PROSES AKAN LEBIH CEPAT JIKA FORMAT DIISI DENGAN LENGKAP & BENAR_* 🚀`;
 
-80 — Rp14.000<br>
-160 — Rp28.000<br>
-240 — Rp42.000<br>
-320 — Rp56.000<br>
-400 — Rp70.000<br>
-500 — Rp75.000<br>
-660 — Rp103.000<br>
-800 — Rp140.000<br>
-1000 — Rp150.000<br>
-1500 — Rp225.000<br>
-2000 — Rp290.000<br>
-2500 — Rp365.000<br>
-3000 — Rp440.000<br>
-4000 — Rp580.000<br>
-5000 — Rp750.000<br>
-10.000 — Rp1.400.000
+    const toast = document.getElementById("toast");
+    function showToast(message){
+      toast.textContent=message;toast.classList.add("show");
+      setTimeout(()=>toast.classList.remove("show"),2300)
+    }
+    async function copyFormat(){
+      try{
+        await navigator.clipboard.writeText(orderFormat);
+        showToast("✅ Format Order MLBB berhasil disalin")
+      }catch(error){
+        const area=document.createElement("textarea");
+        area.value=orderFormat;document.body.appendChild(area);area.select();
+        document.execCommand("copy");area.remove();
+        showToast("✅ Format Order MLBB berhasil disalin")
+      }
+    }
+    document.getElementById("copyTop").addEventListener("click",copyFormat);
+    document.getElementById("copyBottom").addEventListener("click",copyFormat);
 
-
-<div class="subtitle">
-🔥 Upgrade Premium
-</div>
-
-450 — Rp75.000<br>
-1000 — Rp150.000<br>
-2200 — Rp320.000
-
-</div>
-
-</div>
-
-
-
-<!-- MLBB -->
-
-<div class="card">
-
-<h2>
-💎 DIAMOND MLBB 💎
-</h2>
-
-
-<div class="price">
-
-💎 20 — Rp6.000<br>
-💎 59 — Rp15.500<br>
-💎 100 — Rp26.500<br>
-💎 200 — Rp57.000<br>
-💎 250 — Rp69.000<br>
-💎 334 — Rp98.000<br>
-💎 429 — Rp119.000<br>
-💎 568 — Rp149.000<br>
-💎 706 — Rp189.000<br>
-💎 1050 — Rp279.000<br>
-💎 1138 — Rp310.000<br>
-💎 1704 — Rp464.100<br>
-💎 2010 — Rp519.000<br>
-💎 2195 — Rp567.000<br>
-💎 3688 — Rp949.000<br>
-💎 4020 — Rp999.000<br>
-💎 4830 — Rp1.179.000<br>
-💎 5532 — Rp1.350.000<br>
-💎 6000 — Rp1.464.000
-
-</div>
-
-</div>
-
-
-
-<!-- CONTACT -->
-
-
-<div class="contact">
-
-
-<h2>
-⚡ CONTACT JUASTORE ⚡
-</h2>
-
-
-<a href="https://wa.me/6285111662004">
-📱 WhatsApp Admin
-</a>
-
-
-<a href="https://juastore.web.id">
-🛒 Apps Store JuaStore
-</a>
-
-
-<a href="https://lynk.id/juastore">
-🌐 Info JuaStore
-</a>
-
-
-<a href="https://lynk.id/giveawayjuastore">
-🎁 Giveaway JuaStore
-</a>
-
-
-<a href="https://chat.whatsapp.com/HSQcXPrUVSlBMMjtqWcCDG">
-👥 Group JuaStore 01
-</a>
-
-
-<a href="https://chat.whatsapp.com/CTP1EhYFdMrHOPzp9wSslW">
-👥 Group JuaStore 02
-</a>
-
-
-<a href="https://chat.whatsapp.com/F0oGQebznuRLJ0Grka6Ujo">
-👥 Group JuaStore 03
-</a>
-
-
-</div>
-
-
-<div class="footer">
-
-© 2026 JuaStore • Top Up Game Murah 🎮
-
-</div>
-
-
+    document.querySelectorAll(".order-item").forEach(button=>{
+      button.addEventListener("click",()=>{
+        const item=button.dataset.item;
+        const message=encodeURIComponent(`Halo Admin 1, saya mau top up Mobile Legends paket ${item}.\n\nUser ID:\nZone ID:`);
+        window.open(`https://wa.me/6285111662004?text=${message}`,"_blank")
+      })
+    })
+  </script>
 </body>
-
 </html>
